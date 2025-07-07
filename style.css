@@ -158,11 +158,6 @@ input::placeholder, textarea::placeholder {
     margin-top: 20px;
 }
 
-/* Estilo para o croqui */
-#croqui {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
 
 
 /* Adicionado para telas menores */
