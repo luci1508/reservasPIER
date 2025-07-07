@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIER 41 - Reservas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img id="logo" src="logo.png" alt="Logo do PIER 41">
+
+    <div class="main-buttons">
+        <button onclick="mostrar('reserva')">Fazer Reserva</button>
+        <button onclick="mostrar('consultar')">Consultar Reservas</button>
+        <button onclick="mostrar('cancelar')">Cancelar Reserva</button>
+    </div>
+
+    <img id="croqui" src="croqui.jpg" alt="Mapa do bar - PIER 41">
+
+    <div id="reserva" class="section">
+        <h2>Fazer Reserva</h2>
+        <label for="dataReserva">Data da Reserva:</label>
+        <input type="date" id="dataReserva" required>
+
+        <label for="numPessoas">Número de Pessoas:</label>
+        <input type="number" id="numPessoas" placeholder="Número de pessoas" min="1" required>
+
+        <label for="espaco">Escolha o Espaço:</label>
+        <select id="espaco" required>
+            <option value="" disabled selected>Selecione um espaço</option>
+            <option>Garden</option>
+            <option>Bar dos Fundos</option>
+            <option>Atrás da Banda</option>
+            <option>Mesas ao Redor da Banda</option>
+            <option>Amstel</option>
+            <option>Amstel TV</option>
+            <option>Mesa Devassa</option>
+            <option>Sintético</option>
+        </select>
+
+        <label for="nomeCliente">Nome do Cliente:</label>
+        <input type="text" id="nomeCliente" placeholder="Nome completo do cliente" required>
+
+        <label for="telefoneCliente">Telefone:</label>
+        <input type="tel" id="telefoneCliente" placeholder="Telefone de contato" required>
+
+        <button onclick="confirmarReserva()">Confirmar Reserva</button>
+    </div>
+
+    <div id="consultar" class="section">
+        <h2>Reservas por Data</h2>
+        <label for="consultaData">Selecionar Data para Consulta:</label>
+        <input type="date" id="consultaData" onchange="mostrarReservas()">
+        <div id="listaReservas"></div>
+    </div>
+
+    <div id="cancelar" class="section">
+        <h2>Cancelar Reserva</h2>
+        <label for="cancelarNome">Nome do Cliente (opcional):</label>
+        <input type="text" id="cancelarNome" placeholder="Nome do cliente (opcional)">
+
+        <label for="cancelarData">Data da Reserva:</label>
+        <input type="date" id="cancelarData" required>
+
+        <label for="motivoCancelamento">Motivo do Cancelamento:</label>
+        <textarea id="motivoCancelamento" placeholder="Descreva o motivo do cancelamento" rows="4" required></textarea>
+
+        <button onclick="confirmarCancelamento()">Confirmar Cancelamento</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
